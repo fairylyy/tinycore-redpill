@@ -5,7 +5,9 @@
     "sn": "1234XXX123",
     "mac1": "MAC1ADDRESS",
     "mac2": "MAC2ADDRESS",
-    "netif_num" : "2"
+    "netif_num" : "2",
+    "SataPortMap": "1",
+    "DiskIdxMap": "00"
   },
   "synoinfo": {
     "supportsystemperature": "no",
