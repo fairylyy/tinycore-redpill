@@ -18,47 +18,47 @@ jobs:
         run: |
           cp -f user_config.json.bak user_config.json
           sed -i -e 's\0x0001\0x0002\g' -e 's\0x46f4\0x0002\g' -e 's\1234XXX123\1830ODN005450\g' -e 's\MAC1ADDRESS\245EBE0299E8\g' -e 's\MAC2ADDRESS\001B21BC18BB\g' user_config.json
-          ./rp-helper.sh build broadwell-7.0.1-42218
-          ./rp-helper.sh ext broadwell-7.0.1-42218 add jumkey.acpid2
-          ./rp-helper.sh ext broadwell-7.0.1-42218 add redpill-boot-wait
-          ./rp-helper.sh ext broadwell-7.0.1-42218 add pocopico.mpt3sas
-          ./rp-helper.sh ext broadwell-7.0.1-42218 add pocopico.vmw_pvscsi
-          ./rp-helper.sh ext broadwell-7.0.1-42218 add pocopico.r8125
-          ./rp-helper.sh ext broadwell-7.0.1-42218 add pocopico.ixgbe
-          ./rp-helper.sh auto broadwell-7.0.1-42218
+          ./rploader.sh build broadwell-7.0.1-42218
+          ./rploader.sh ext broadwell-7.0.1-42218 add jumkey.acpid2
+          ./rploader.sh ext broadwell-7.0.1-42218 add redpill-boot-wait
+          ./rploader.sh ext broadwell-7.0.1-42218 add pocopico.mpt3sas
+          ./rploader.sh ext broadwell-7.0.1-42218 add pocopico.vmw_pvscsi
+          ./rploader.sh ext broadwell-7.0.1-42218 add pocopico.r8125
+          ./rploader.sh ext broadwell-7.0.1-42218 add pocopico.ixgbe
+          ./rploader.sh auto broadwell-7.0.1-42218
           
       - name: 编译-3615
         run: |
-          ./rp-helper.sh clean all
+          ./rploader.sh clean all
           sudo rm -rf custom/extensions
           cp -f user_config.json.bak user_config.json
           sed -i -e 's\0x0001\0x0002\g' -e 's\0x46f4\0x0002\g' -e 's\1234XXX123\1630LWN009257\g' -e 's\MAC1ADDRESS\245EBE0299E8\g' -e 's\MAC2ADDRESS\001B21BC18BB\g' user_config.json
-          ./rp-helper.sh build bromolow-7.0.1-42218
-          ./rp-helper.sh ext bromolow-7.0.1-42218 add jumkey.acpid2
-          ./rp-helper.sh ext bromolow-7.0.1-42218 add redpill-boot-wait
-          ./rp-helper.sh ext bromolow-7.0.1-42218 add pocopico.mpt3sas
-          ./rp-helper.sh ext bromolow-7.0.1-42218 add pocopico.vmw_pvscsi
-          ./rp-helper.sh ext bromolow-7.0.1-42218 add pocopico.r8125
-          ./rp-helper.sh ext bromolow-7.0.1-42218 add pocopico.ixgbe
-          ./rp-helper.sh auto bromolow-7.0.1-42218
+          ./rploader.sh build bromolow-7.0.1-42218
+          ./rploader.sh ext bromolow-7.0.1-42218 add jumkey.acpid2
+          ./rploader.sh ext bromolow-7.0.1-42218 add redpill-boot-wait
+          ./rploader.sh ext bromolow-7.0.1-42218 add pocopico.mpt3sas
+          ./rploader.sh ext bromolow-7.0.1-42218 add pocopico.vmw_pvscsi
+          ./rploader.sh ext bromolow-7.0.1-42218 add pocopico.r8125
+          ./rploader.sh ext bromolow-7.0.1-42218 add pocopico.ixgbe
+          ./rploader.sh auto bromolow-7.0.1-42218
 
       - name: 添加扩展驱动-918
         run: |
-          ./rp-helper.sh clean all
+          ./rploader.sh clean all
           sudo rm -rf custom/extensions
           cp -f user_config.json.bak user_config.json
           sed -i -e 's\0x0001\0x0002\g' -e 's\0x46f4\0x0002\g' -e 's\1234XXX123\1330PDN004175\g' -e 's\MAC1ADDRESS\245EBE0299E8\g' -e 's\MAC2ADDRESS\001B21BC18BB\g' user_config.json
-          ./rp-helper.sh build apollolake-7.0.1-42218
-          ./rp-helper.sh ext apollolake-7.0.1-42218 add jumkey.acpid2
-          ./rp-helper.sh ext apollolake-7.0.1-42218 add redpill-boot-wait
-          ./rp-helper.sh ext apollolake-7.0.1-42218 add pocopico.mpt3sas
-          ./rp-helper.sh ext apollolake-7.0.1-42218 add pocopico.vmw_pvscsi
-          ./rp-helper.sh ext apollolake-7.0.1-42218 add pocopico.r8125
-          ./rp-helper.sh ext apollolake-7.0.1-42218 add pocopico.ixgbe
-          ./rp-helper.sh auto apollolake-7.0.1-42218
+          ./rploader.sh build apollolake-7.0.1-42218
+          ./rploader.sh ext apollolake-7.0.1-42218 add jumkey.acpid2
+          ./rploader.sh ext apollolake-7.0.1-42218 add redpill-boot-wait
+          ./rploader.sh ext apollolake-7.0.1-42218 add pocopico.mpt3sas
+          ./rploader.sh ext apollolake-7.0.1-42218 add pocopico.vmw_pvscsi
+          ./rploader.sh ext apollolake-7.0.1-42218 add pocopico.r8125
+          ./rploader.sh ext apollolake-7.0.1-42218 add pocopico.ixgbe
+          ./rploader.sh auto apollolake-7.0.1-42218
 
       - name: 清理并构建缓存
-        run: ./rp-helper.sh clean all
+        run: ./rploader.sh clean all
         
         
       - name: Archive DS3617xs 7.0.1 loader image
